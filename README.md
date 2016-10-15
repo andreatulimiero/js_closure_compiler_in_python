@@ -59,3 +59,10 @@ Configuration file structure (below are the default values):
 </dl>
 Other informations can be found directly in the Google's [site](https://developers.google.com/closure/compiler/docs/gettingstarted_api)
 
+##Requirements
+[Python 3](https://www.python.org/) <br/>
+Python's package [requests](http://docs.python-requests.org/en/master/), you can install it with [pip](https://pypi.python.org/pypi/pip)
+using the `requirements.txt` file with:
+```python
+pip install -r requirements.txt
+```
