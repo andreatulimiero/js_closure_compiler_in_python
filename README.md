@@ -55,4 +55,5 @@ Configuration file structure (below are the default values):
   <dt>output_file</dt>
   <dd>Specify the name of the file you want the compiled_code, or any other information, to be saved</dd>
 </dl>
+Other informations can be found directly in the Google's [site](https://developers.google.com/closure/compiler/docs/gettingstarted_api)
 
