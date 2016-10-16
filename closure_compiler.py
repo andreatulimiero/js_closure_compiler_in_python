@@ -1,4 +1,5 @@
 import os, requests, json
+from functools import reduce
 
 # Default settings
 config = {
@@ -41,6 +42,7 @@ def get_js_code():
       try:
         f = open(filename)
         joined_js += f.read()
+        files_names.append(filename)
         print('|-' + filename)
       except FileNotFoundError:
         print('|-No ' + filename + ' file found')
@@ -65,4 +67,9 @@ if __name__ == '__main__':
   with open(config['output_file'], mode='w+') as output_file:
     print(r.text, file=output_file)
     print('Compilation saved in ' + config['output_file'] + '\n')
+    current_size = os.path.getsize(config['output_file'])//1024
+    previous_size = reduce(lambda x,y: os.path.getsize(x) + os.path.getsize(y), files_names)//1024
+    print('Previous size: ' + str(previous_size) + ' Kb')
+    print('Current size: ' + str(current_size) + ' Kb')
+    print('Saved: ' + str(previous_size - current_size) + 'Kb')
     exit(0)
