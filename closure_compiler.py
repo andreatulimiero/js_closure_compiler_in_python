@@ -8,6 +8,7 @@ config = {
   'output_info' : 'compiled_code',
   'output_file' : 'app.min.js'
 }
+files_names = []
 
 def switch_to_current_dir():
   abspath = os.path.abspath(__file__)
@@ -39,7 +40,7 @@ def get_js_code():
     for filename in to_closure_compile.read().split('\n'):
       try:
         f = open(filename)
-        joined_js = f.read()
+        joined_js += f.read()
         print('|-' + filename)
       except FileNotFoundError:
         print('|-No ' + filename + ' file found')
