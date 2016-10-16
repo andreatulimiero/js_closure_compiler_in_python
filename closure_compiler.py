@@ -11,6 +11,12 @@ config = {
 }
 files_names = []
 
+def check_internet_connection():
+  try:
+    r = requests.get('http://google.com')
+  except ConnectionError:
+    print('Check your internet connection')
+
 def switch_to_current_dir():
   abspath = os.path.abspath(__file__)
   dname = os.path.dirname(abspath)
@@ -51,6 +57,7 @@ def get_js_code():
   return joined_js
 
 if __name__ == '__main__':
+  check_internet_connection()
   switch_to_current_dir()
   load_configs()
   data = {
@@ -59,10 +66,12 @@ if __name__ == '__main__':
     'output_format' : config['output_format'] ,
     'output_info' : config['output_info']
   }
+
   print('\nRequesting compilation ...')
   if not len(data['js_code']):
     print('#No file specified, aborting compilation\n')
     exit(1)
+    
   r = requests.post(config['url'], data=data)
   with open(config['output_file'], mode='w+') as output_file:
     print(r.text, file=output_file)
