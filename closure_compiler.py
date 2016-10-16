@@ -74,7 +74,7 @@ if __name__ == '__main__':
     print(r.text, file=output_file)
     print('Compilation saved in ' + config['output_file'] + '\n')
     current_size = os.path.getsize(config['output_file'])//1024
-    previous_size = reduce(lambda x,y: os.path.getsize(x) + os.path.getsize(y), files_names)//1024
+    previous_size = reduce(lambda x,y: x + y, [os.path.getsize(x) for x in files_names])//1024
     print('Previous size: ' + str(previous_size) + ' Kb')
     print('Current size: ' + str(current_size) + ' Kb')
     print('Saved: ' + str(previous_size - current_size) + 'Kb')
