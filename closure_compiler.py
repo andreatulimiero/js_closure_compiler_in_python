@@ -99,6 +99,6 @@ if __name__ == '__main__':
     previous_size = reduce(lambda x,y: x + y, [os.path.getsize(x) for x in files_names])//1024
     print_info('Previous size: ' + str(previous_size) + ' Kb')
     print_info('Current size: ' + str(current_size) + ' Kb')
-    saved_percentage = int(current_size/previous_size*100)
-    print_stat('Saved: ' + str(saved_percentage if saved_percentage > 0 else '~100') + '% (' + str(previous_size - current_size) + ' Kb) of room')
+    saved_percentage = int((previous_size - current_size)/previous_size*100)
+    print_stat('Saved: ~' + str(saved_percentage if saved_percentage > 0 else '100') + '% (' + str(previous_size - current_size) + ' Kb) of room')
     exit(0)
