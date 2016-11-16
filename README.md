@@ -1,6 +1,6 @@
 # JS closure compiler in Python
 Simple JS closure compiler written in Python that communicates with [Google Closure Compiler Service](https://closure-compiler.appspot.com/home). <br/>
-Compile a JS file with closure not only reduce the size of the specified files, that is critical in the creation of a modern site, but also ensure
+Compile a JS file with closure not only reduces the size of the specified files, that is critical in the creation of a modern site, but also ensure
 full compatibility with older sites that don't support the new ECMASCRIPT2016, giving you the possibility to use all of its sugar features. <br/>
 All you need to do is specify a list of the files you want to be compiled
 
