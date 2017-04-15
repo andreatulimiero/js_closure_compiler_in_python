@@ -8,7 +8,7 @@ All you need to do is specify a list of the files you want to be compiled
 Put the `closure_compiler.py` wherever you want and add all the files you want to compile in the `.to_closure_compile` file,
 one line per file - relative paths are allowed as well. <br/>
 Example: <br/>
-#####Project's folder structure
+##### Project's folder structure
 ```html
 index.html
 js/
@@ -19,14 +19,14 @@ js/
  ├─app.js
 ```
 
-#####.to_closure_compile file structure
+##### .to_closure_compile file structure
 ```html
 elements/topbar.js
 config.js 
 app.js
 ```
-##Configuration
-###Configuration file
+## Configuration
+### Configuration file
 The compiler can be customized to suit your needs. <br/>
 The configuration is a json dictionary file, it has to be called `.closure_compiler_congif.json`. <br/>
 However, if no config file it's specified, the default values will be used instead <br/>
@@ -40,7 +40,7 @@ Configuration file structure (below are the default values):
   "output_file" : "app.min.js"
 }
 ```
-###Configuration options
+### Configuration options
 <dl> 
   <dt>url</dt>
   <dd>This field shouldn't not be changed, but in case google will change the url, you can specify yours</dd>
@@ -59,7 +59,7 @@ Configuration file structure (below are the default values):
 </dl>
 Other informations can be found directly in the Google's [site](https://developers.google.com/closure/compiler/docs/gettingstarted_api)
 
-##Requirements
+## Requirements
 [Python 3](https://www.python.org/) <br/>
 Python's package [requests](http://docs.python-requests.org/en/master/), you can install it with [pip](https://pypi.python.org/pypi/pip)
 using the `requirements.txt` file with:
